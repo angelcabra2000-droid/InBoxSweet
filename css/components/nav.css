@@ -1,0 +1,66 @@
+/* --- Contenedor general del navbar (solo fondo para el título) --- */
+.navbar {
+    background: #ff9ac2; /* Fondo fuerte */
+    padding: 15px 0 0 0; /* Quitamos padding abajo para que el menú sea independiente */
+}
+
+/* --- Título centrado --- */
+.navbar-title {
+    text-align: center;
+    margin-bottom: 20px; /* Baja el menú */
+}
+
+.navbar-title h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- Fila del menú (con su fondo separado) --- */
+.navbar-menu {
+    background: #ffd2e6; /* Rosado claro */
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    border-top: 2px solid #ffb3cf; /* línea sutil entre título y menú */
+}
+
+/* --- Enlaces del menú --- */
+.navbar-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* --- Botón de iniciar sesión (derecha) --- */
+.btn-login {
+    position: absolute;
+    right: 40px;
+    background: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #e60073;
+    border: 2px solid white;
+    text-decoration: none;
+}
+
+.btn-login:hover {
+    background: #ffe6f0;
+    border-color: #e60073;
+}
+
+

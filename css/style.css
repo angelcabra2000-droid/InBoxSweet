@@ -1,0 +1,36 @@
+/* Importar utilidades y estructuras generales */
+@import url('base.css');
+@import url('utils.css');
+@import url('components/form.css');
+@import url('components/nav.css');
+@import url('layout.css');
+
+/* Importar estilos de páginas */
+@import url('pages/index.css');
+@import url('pages/postres.css');
+@import url('pages/detalles.css');
+@import url('pages/nosotros.css');
+@import url('pages/contactanos.css');
+
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff6fb;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    color: #333;
+}
+p {
+    color: #444;
+}
+a {
+    text-decoration: none;
+    color: #b30059;
+}
+a:hover {
+    color: #ff4da6;
+}

@@ -1,0 +1,7 @@
+/* Estilos base del sitio */
+:root {
+    --primary: #ff6299;
+    --primary-light: #ff9ac3;
+    --text: #333;
+    --background: #fff6fb;
+}
