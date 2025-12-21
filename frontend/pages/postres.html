@@ -1,36 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Postres - Inbox Sweet</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
 
-    <nav class="navbar">
-        <!-- Fila del título -->
-        <div class="navbar-title">
-            <h1>Inbox Sweet</h1>
+    <div class="app-bg">
+        <div class="app-container">
+            <!-- NAVBAR -->
+            <nav class="navbar">
+                <div class="navbar-title">
+                    <h1>Inbox Sweet</h1>
+                </div>
+
+                <div class="navbar-menu">
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="postres.html" class="active">Postres</a></li>
+                        <li><a href="detalles.html">Detalles</a></li>
+                        <li><a href="flores.html">Flores</a></li>
+                        <li><a href="contactanos.html">Contáctanos</a></li>
+                    </ul>
+
+                    <a href="login.html" class="btn-login">Iniciar sesión</a>
+                </div>
+            </nav>
+
+            <!-- CONTENIDO -->
+            <main class="postres-page">
+
+                <!-- CATEGORÍA -->
+                <section class="categoria">
+                    <h2>Mousses</h2>
+
+                    <div class="carrusel">
+                        <button class="arrow left" onclick="scrollCarrusel('mousses', -1)">❮</button>
+
+                        <div class="carrusel-viewport">
+                            <div class="carrusel-track" id="mousses">
+
+                                <!-- Postre -->
+                                <div class="postre-card">
+                                    <img src="../assets/img/img_no_encontrada.avif" alt="Mousse de Maracuyá">
+                                    <h4>Mousse de Maracuyá</h4>
+                                    <p class="precio">$5.500</p>
+
+                                    <div class="hover-info">
+                                        <p>Mousse suave y fresco de maracuyá.</p>
+                                        <button>Añadir al carrito</button>
+                                    </div>
+                                </div>
+
+                                <div class="postre-card">
+                                    <img src="../assets/img/img_no_encontrada.avif" alt="Mousse de Limón">
+                                    <h4>Mousse de Limón</h4>
+                                    <p class="precio">$5.500</p>
+
+                                    <div class="hover-info">
+                                        <p>Mousse cítrico y cremoso.</p>
+                                        <button>Añadir al carrito</button>
+                                    </div>
+                                </div>
+
+                                <div class="postre-card">
+                                    <img src="../assets/img/img_no_encontrada.avif" alt="Mousse de Guanábana">
+                                    <h4>Mousse de Guanabana</h4>
+                                    <p class="precio">$5.5000</p>
+
+                                    <div class="hover-info">
+                                        <p>Mousse ....</p>
+                                        <button>Añadir al carrito</button>
+                                    </div>
+                                </div>
+
+                                <div class="postre-card">
+                                    <img src="../assets/img/img_no_encontrada.avif" alt="Mousse de cafe">
+                                    <h4>Mousse de Cafe</h4>
+                                    <p class="precio">$5.500</p>
+
+                                    <div class="hover-info">
+                                        <p>Mousse ....</p>
+                                        <button>Añadir al carrito</button>
+                                    </div>
+                                </div>
+
+                                <div class="postre-card">
+                                    <img src="../assets/img/img_no_encontrada.avif" alt="Mousse de Mora">
+                                    <h4>Mousse de Mora</h4>
+                                    <p class="precio">$5.500</p>
+
+                                    <div class="hover-info">
+                                        <p>Mousse ....</p>
+                                        <button>Añadir al carrito</button>
+                                    </div>
+                                </div>
+
+                                <div class="postre-card">
+                                    <img src="../assets/img/img_no_encontrada.avif" alt="Mousse de Frutos rojos">
+                                    <h4>Mousse de Frutos Rojos</h4>
+                                    <p class="precio">$5.500</p>
+
+                                    <div class="hover-info">
+                                        <p>Mousse ....</p>
+                                        <button>Añadir al carrito</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <button class="arrow right" onclick="scrollCarrusel('mousses', 1)">❯</button>
+                    </div>
+                </section>
+
+
+            </main>
+
+            <script src="../assets/js/pages/postres.js"></script>
+
         </div>
-
-        <!-- Fila del menú -->
-        <div class="navbar-menu">
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="postres.html">Postres</a></li>
-                <li><a href="detalles.html">Detalles</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="contactanos.html">Contáctanos</a></li>
-            </ul>
-
-            <a href="login.html" class="btn-login">Iniciar sesión</a>
-        </div>
-    </nav>
-    <main>
-        <h1>Postres</h1>
-        <p>Aquí irán los postres.</p>        
-    </main>
-
+    </div>
 </body>
+
 </html>
