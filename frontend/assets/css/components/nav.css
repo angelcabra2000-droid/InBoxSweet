@@ -7,7 +7,7 @@
 /* --- Título centrado --- */
 .navbar-title {
     text-align: center;
-    margin-bottom: 20px; /* Baja el menú */
+    /*margin-bottom: 20px; /* Baja el menú */
 }
 
 .navbar-title h1 {
