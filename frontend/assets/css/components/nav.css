@@ -1,32 +1,43 @@
 /* --- Contenedor general del navbar (solo fondo para el título) --- */
 .navbar {
-    background: #ff9ac2; /* Fondo fuerte */
-    padding: 15px 0 0 0; /* Quitamos padding abajo para que el menú sea independiente */
+    background: white;
+    /* Fondo fuerte */
+    padding: 15px 0 0 0;
+    /* Quitamos padding abajo para que el menú sea independiente */
 }
 
 /* --- Título centrado --- */
 .navbar-title {
-    text-align: center;
-    /*margin-bottom: 20px; /* Baja el menú */
+    display: flex;
+    justify-content: center;
+    /* centra horizontalmente */
+    align-items: center;
+    width: 100%;
+    /* ocupa todo el ancho */
+    padding: 20px 0;
 }
+
 
 .navbar-title h1 {
     margin: 0;
     font-size: 32px;
     font-weight: bold;
     color: #333;
+
 }
 
 /* --- Fila del menú (con su fondo separado) --- */
 .navbar-menu {
-    background: #ffd2e6; /* Rosado claro */
+    background: #ffd2e6;
+    /* Rosado claro */
     padding: 12px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
     position: relative;
-    border-top: 2px solid #ffb3cf; /* línea sutil entre título y menú */
+    border-top: 2px solid #ffb3cf;
+    /* línea sutil entre título y menú */
 }
 
 /* --- Enlaces del menú --- */
@@ -63,4 +74,9 @@
     border-color: #e60073;
 }
 
-
+.logo {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
