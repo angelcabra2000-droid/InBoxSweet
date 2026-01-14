@@ -17,20 +17,7 @@
 /* ================================
    PALETA DE COLORES (variables)
 ================================ */
-:root {
-    --dark: #312B33;
-    /* Negro violeta */
-    --light: #E9E4FF;
-    /* Lila claro */
-    --primary: #606180;
-    /* Morado base */
-    --secondary: #856B8E;
-    /* Lila pastel */
-    --gray: #454552;
-    /* Gris morado */
-    --font-title: 'Dunkin', sans-serif;
-    --font-text: 'Nunito', sans-serif;
-}
+
 
 
 

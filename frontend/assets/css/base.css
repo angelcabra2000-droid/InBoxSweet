@@ -1,14 +1,15 @@
 /* Estilos base del sitio */
 :root {
-    --primary: #ff6299;
-    --primary-light: #ff9ac3;
-    --text: #333;
-    --background: #fff6fb;
-}
-
-/* Fondo general */
-body {
-    margin: 0;
-    background-color: #606180;
-    font-family: Arial, Helvetica, sans-serif;
+    --dark: #312B33;
+    /* Negro violeta */
+    --light: #E9E4FF;
+    /* Lila claro */
+    --primary: #606180;
+    /* Morado base */
+    --secondary: #856B8E;
+    /* Lila pastel */
+    --gray: #454552;
+    /* Gris morado */
+    --font-title: 'Dunkin', sans-serif;
+    --font-text: 'Nunito', sans-serif;
 }

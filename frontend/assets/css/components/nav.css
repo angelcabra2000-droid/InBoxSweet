@@ -1,6 +1,6 @@
 /* --- Contenedor general del navbar (solo fondo para el título) --- */
 .navbar {
-    background: white;
+    background: var(--light);
     /* Fondo fuerte */
     padding: 15px 0 0 0;
     /* Quitamos padding abajo para que el menú sea independiente */
@@ -28,15 +28,15 @@
 
 /* --- Fila del menú (con su fondo separado) --- */
 .navbar-menu {
-    background: #ffd2e6;
+    background: var(--primary);
     /* Rosado claro */
-    padding: 12px 0;
+    padding: 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
     position: relative;
-    border-top: 2px solid #ffb3cf;
+    border-top: 10px solid var(--gray);
     /* línea sutil entre título y menú */
 }
 
@@ -44,7 +44,7 @@
 .navbar-menu ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 70px;
     margin: 0;
     padding: 0;
 }
@@ -53,29 +53,30 @@
     text-decoration: none;
     font-size: 18px;
     font-weight: 600;
-    color: #333;
+    color: var(--light);
 }
 
 /* --- Botón de iniciar sesión (derecha) --- */
 .btn-login {
     position: absolute;
-    right: 40px;
-    background: white;
+    right: 60px;
+    top: 120px;
+    background: var(--primary);
     padding: 8px 16px;
-    border-radius: 8px;
+    border-radius: 15px;
     font-weight: bold;
-    color: #e60073;
-    border: 2px solid white;
+    color: var(--light);
+
     text-decoration: none;
 }
 
 .btn-login:hover {
-    background: #ffe6f0;
-    border-color: #e60073;
+    background: var(--light);
+    border-color: var(--gray);
 }
 
 .logo {
-    height: 120px;
+    height: 150px;
     width: auto;
     object-fit: contain;
     display: block;
