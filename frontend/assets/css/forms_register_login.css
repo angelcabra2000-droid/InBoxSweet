@@ -1,0 +1,207 @@
+/* ===============================
+   OVERLAY
+=============================== */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    z-index: 998;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ===============================
+   PANELES (Login y Register)
+=============================== */
+.login-panel,
+.register-panel {
+    position: fixed;
+    top: 0;
+    right: -40%;
+    width: 28%;
+    height: 100vh;
+
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    padding: 50px 40px;
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+
+    box-shadow: -15px 0 40px rgba(0, 0, 0, 0.25);
+    transition: right 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* Cuando están activos */
+.login-panel.active,
+.register-panel.active {
+    right: 0;
+}
+
+/* ===============================
+   BOTONES DE LA PÁGINA
+=============================== */
+.btn {
+    position: absolute;
+    right: 60px;
+    top: 230px;
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+    /* Debajo del overlay */
+}
+
+.btn button {
+    position: relative;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+/* Hover lift */
+.btn button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* Cuando se presiona */
+.btn button:active {
+    transform: translateY(-1px) scale(0.97);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Botón Iniciar sesión */
+.btn .btn-login {
+    background: var(--light);
+    color: var(--primary);
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.btn button.btn-login:hover {
+    background: var(--primary);
+    color: var(--light);
+}
+
+/* Botón Registrarse */
+.btn .btn-register {
+    background: var(--primary);
+    color: var(--light);
+    padding: 10px 28px;
+    border-radius: 15px;
+    border: none;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.btn button.btn-register:hover {
+    background: var(--light);
+    color: var(--primary);
+}
+
+/* ===============================
+   LINKS DENTRO DE LOS PANELES
+=============================== */
+.switch-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.switch-text a {
+    color: var(--primary);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.switch-text a:hover {
+    text-decoration: underline;
+}
+
+.login-panel.active,
+.register-panel.active {
+    right: 0;
+    animation: panelEnter 0.45s ease;
+}
+
+@keyframes panelEnter {
+    from {
+        transform: translateX(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.login-panel input,
+.register-panel input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    margin-bottom: 18px;
+    font-size: 15px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+    transition: 0.3s;
+}
+
+.login-panel input:focus,
+.register-panel input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(255, 123, 158, 0.15);
+}
+
+.login-panel button,
+.register-panel button {
+    margin-top: 15px;
+    padding: 14px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-panel button:hover,
+.register-panel button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.login-panel h2,
+.register-panel h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: var(--gray);
+}

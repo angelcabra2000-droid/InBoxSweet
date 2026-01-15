@@ -47,6 +47,73 @@
             </main>
         </div>
     </div>
+
+    <div class="btn">
+        <button class="btn-register" onclick="abrirRegister()">Registrarse</button>
+        <button class="btn-login" onclick="abrirLogin()">Iniciar sesión</button>
+    </div>
+
+    <!-- Contenido inicial -->
+    <main class="container">
+        <p>Bienvenido a Inbox Sweet. Aquí inicia tu sitio web de postres.</p>
+    </main>
+
+    </div>
+    </div>
+
+    <!-- Fondo oscuro -->
+    <!-- Overlay oscuro -->
+    <div id="overlay" class="overlay" onclick="cerrarPaneles()"></div>
+
+
+    <!-- Panel de login -->
+    <div id="loginPanel" class="login-panel">
+        <h2>Iniciar sesión</h2>
+
+        <label>Correo electrónico</label>
+        <input type="email" placeholder="correo@ejemplo.com">
+
+        <label>Contraseña</label>
+        <input type="password" placeholder="••••••">
+
+        <button>Ingresar</button>
+
+        <p class="switch-text">
+            ¿No tienes cuenta? <a href="#" onclick="abrirRegisterDesdeLogin()">Regístrate aquí</a>
+
+        </p>
+
+
+    </div>
+
+
+    <!-- Panel de registro -->
+    <div id="registerPanel" class="login-panel register-panel">
+
+        <h2>Crear cuenta</h2>
+
+        <label>Nombre</label>
+        <input type="text" placeholder="Tu nombre">
+
+        <label>Correo electrónico</label>
+        <input type="email" placeholder="correo@ejemplo.com">
+
+        <label>Contraseña</label>
+        <input type="password" placeholder="••••••">
+
+        <label>Confirmar contraseña</label>
+        <input type="password" placeholder="••••••">
+
+        <button>Registrarme</button>
+
+        <p class="switch-text">
+            ¿Ya tienes cuenta? <a href="#" onclick="volverALogin()">Inicia sesión</a>
+
+        </p>
+
+    </div>
+
+    <script src="../assets/js/pages/login_register.js"></script>
 </body>
 
 </html>
