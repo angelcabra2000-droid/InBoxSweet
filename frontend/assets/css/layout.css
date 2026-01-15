@@ -1,0 +1,8 @@
+.container {
+    max-width: 1200px;
+    /* ancho máximo del contenido */
+    margin: 0 auto;
+    /* centra el contenido */
+    padding: 0 24px;
+    /* margen invisible lateral */
+}

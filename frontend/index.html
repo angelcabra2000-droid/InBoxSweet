@@ -24,7 +24,7 @@
         <div class="navbar-title">
             <img src="assets/img/Logo/Logo_1_120px.png" alt="Inbox Sweet" class="logo">
 
-            <a href="pages/login.html" class="btn-login">Iniciar sesión</a>
+
         </div>
 
         <!-- Fila del menú -->
@@ -40,13 +40,40 @@
 
         </div>
     </nav>
+
+    <div class="btn-login">
+        <button class="login-btn" onclick="abrirLogin()">Iniciar sesión</button>
+    </div>
+
     <!-- Contenido inicial -->
-    <main>
+    <main class="container">
         <p>Bienvenido a Inbox Sweet. Aquí inicia tu sitio web de postres.</p>
     </main>
 
     </div>
     </div>
+
+    <!-- Fondo oscuro -->
+    <!-- Overlay oscuro -->
+    <div id="overlay" class="overlay" onclick="cerrarLogin()"></div>
+
+    <!-- Panel de login -->
+    <div id="loginPanel" class="login-panel">
+        <h2>Iniciar sesión</h2>
+
+        <label>Correo electrónico</label>
+        <input type="email" placeholder="correo@ejemplo.com">
+
+        <label>Contraseña</label>
+        <input type="password" placeholder="••••••">
+
+        <button>Ingresar</button>
+
+    </div>
+
+    <script src="assets/js/pages/login.js"></script>
+
+
 </body>
 
 </html>

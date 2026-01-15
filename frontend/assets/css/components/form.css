@@ -1,96 +1,78 @@
-.form-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 40px auto;
-    padding: 25px;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Fondo oscuro */
+.login-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+    z-index: 50;
 }
 
-.form-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #d63384;
+/* Panel que se desliza */
+.login-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 400px;
+    background: white;
+    padding: 40px;
+    transform: translateX(-100%);
+    transition: 0.5s ease;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.form-group {
-    margin-bottom: 15px;
+/* Cuando está activo */
+.login-panel.active {
+    transform: translateX(0);
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #444;
+.login-overlay.active {
+    opacity: 1;
+    pointer-events: all;
 }
 
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #f7a7c1;
-    border-radius: 6px;
-    font-size: 16px;
-}
-
-.form-group input:focus {
-    outline: none;
-    border-color: #d63384;
-}
-
-.btn-submit {
-    width: 100%;
-    padding: 12px;
-    background-color: #d63384;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn-submit:hover {
-    background-color: #b8226c;
-}
-
-.form-text {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 14px;
-}
-
-.form-text a {
-    color: #d63384;
-    text-decoration: none;
-}
-
-.form-text a:hover {
-    text-decoration: underline;
-}
-
-.simple-header {
-    padding: 20px;
-    background-color: #ffb3d1;
+/* Header */
+.login-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.simple-header h1 {
-    margin: 0;
-    color: #a61c6b;
+.login-logo {
+    height: 60px;
 }
 
-.btn-back {
-    background-color: #d63384;
+.login-close {
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-form input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.btn-login-submit {
+    background: #ff6fa9;
+    border: none;
     color: white;
-    padding: 8px 14px;
-    border-radius: 6px;
-    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
     font-weight: bold;
+    cursor: pointer;
 }
-
-.btn-back:hover {
-    background-color: #b8226c;
-}
-

@@ -56,24 +56,6 @@
     color: var(--light);
 }
 
-/* --- Botón de iniciar sesión (derecha) --- */
-.btn-login {
-    position: absolute;
-    right: 60px;
-    top: 120px;
-    background: var(--primary);
-    padding: 8px 16px;
-    border-radius: 15px;
-    font-weight: bold;
-    color: var(--light);
-
-    text-decoration: none;
-}
-
-.btn-login:hover {
-    background: var(--light);
-    border-color: var(--gray);
-}
 
 .logo {
     height: 150px;
