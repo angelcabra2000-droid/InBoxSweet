@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inbox Sweet</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/frontend/assets/css/style.css">
+    <link rel="stylesheet" href="/frontend/assets/css/components/carrusel.css">
 </head>
 
 <body>
@@ -26,16 +27,109 @@
                 <li><a href="html/contactanos.html">Contáctanos</a></li>
             </ul>
 
-            <a href="html/login.html" class="btn-login">Iniciar sesión</a>
+            <a href="/frontend/pages/login.html" class="btn-login">Iniciar sesión</a>
         </div>
     </nav>
     <!-- Contenido inicial -->
     <main>
+        <!-- Carrusel -->
         <p>Bienvenido a Inbox Sweet. Aquí inicia tu sitio web de postres.</p>
+        <section class="carrusel-section">
+            <h2>Postres destacados</h2>
+            <div class="carrusel">
+                <button class="carrusel-btn left">&#10094;</button>
+
+                <div class="carrusel-track">
+                    <article class="producto-card" data-title="Pastel de Chocolate" data-price="$25.000"
+                        data-desc="Pastel artesanal de chocolate con cobertura de ganache, relleno cremoso y decoración especial. Ideal para celebraciones.">
+                        <img src="/frontend/assets/img/postres/postre1.png" alt="Postre 1">
+                        <div class="producto-info">
+                            <h3>Pastel de Chocolate</h3>
+                            <p class="precio">$25.000</p>
+                            <p class="descripcióncorta">Delicioso pastel de chocolate con cobertura de ganache.</p>
+                        </div>
+                    </article>
+                    <article class="producto-card" data-title="Pastel de Vainilla" data-price="$20.000"
+                        data-desc="Pastel de vainilla esponjoso con crema chantilly y decoraciones de frutas frescas. Perfecto para cualquier ocasión especial.">
+                        <img src="/frontend/assets/img/postres/postre2.png" alt="Postre 2">
+                        <div class="producto-info">
+                            <h3>Pastel de Vainilla</h3>
+                            <p class="precio">$20.000</p>
+                            <p class="descripcióncorta">Pastel de vainilla con crema chantilly.</p>
+                        </div>
+                    </article>
+                    <article class="producto-card" data-title="Cheesecake de Fresa" data-price="$30.000"
+                        data-desc="Cheesecake cremoso con base de galleta y cobertura de fresas frescas. Un postre irresistible para los amantes del dulce.">
+                        <img src="/frontend/assets/img/postres/postre3.jpg" alt="Postre 3">
+                        <div class="producto-info">
+                            <h3>Cheesecake de Fresa</h3>
+                            <p class="precio">$30.000</p>
+                            <p class="descripcióncorta">Cheesecake cremoso con cobertura de fresas frescas.</p>
+                        </div>
+                    </article>
+                    <article class="producto-card" data-title="Tarta de Limón" data-price="$22.000"
+                        data-desc="Tarta refrescante con relleno de limón y merengue. Perfecta para quienes buscan un postre cítrico y delicioso.">
+                        <img src="/frontend/assets/img/postres/postre4.jpg" alt="Postre 4">
+                        <div class="producto-info">
+                            <h3>Tarta de Limón</h3>
+                            <p class="precio">$22.000</p>
+                            <p class="descripcióncorta">Tarta refrescante con relleno de limón y merengue.</p>
+                        </div>
+                    </article>
+                    <article class="producto-card" data-title="Mousse de Chocolate" data-price="$18.000"
+                        data-desc="Mousse ligero y esponjoso de chocolate oscuro. Un postre clásico que encanta a todos los paladares.">
+                        <img src="/frontend/assets/img/postres/postre5.jpg" alt="Postre 5">
+                        <div class="producto-info">
+                            <h3>Mousse de Chocolate</h3>
+                            <p class="precio">$18.000</p>
+                            <p class="descripcióncorta">Mousse ligero y esponjoso de chocolate oscuro.</p>
+                        </div>
+                    </article>
+                    <article class="producto-card" data-title="Brownie con Helado" data-price="$15.000"
+                        data-desc="Brownie caliente servido con helado de vainilla. Una combinación perfecta de texturas y sabores.">
+                        <img src="/frontend/assets/img/postres/postre6.jpg" alt="Postre 6">
+                        <div class="producto-info">
+                            <h3>Brownie con Helado</h3>
+                            <p class="precio">$15.000</p>
+                            <p class="descripcióncorta">Brownie caliente servido con helado de vainilla.</p>
+                        </div>
+                    </article>
+                    <article class="producto-card" data-title="Macarons Franceses" data-price="$12.000"
+                        data-desc="Variedad de macarons coloridos y sabrosos. Perfectos para acompañar con té o café.">
+                        <img src="/frontend/assets/img/postres/postre7.png" alt="Postre 7">
+                        <div class="producto-info">
+                            <h3>Macarons Franceses</h3>
+                            <p class="precio">$12.000</p>
+                            <p class="descripcióncorta">Variedad de macarons coloridos y sabrosos.</p>
+                        </div>
+                    </article>
+                    <article class="producto-card" data-title="Gelatina de Frutas" data-price="$10.000"
+                        data-desc="Gelatina fresca con trozos de frutas variadas. Un postre ligero y refrescante.">
+                        <img src="/frontend/assets/img/postres/postre8.png" alt="Postre 8">
+                        <div class="producto-info">
+                            <h3>Gelatina de Frutas</h3>
+                            <p class="precio">$10.000</p>
+                            <p class="descripcióncorta">Gelatina fresca con trozos de frutas variadas.</p>
+                        </div>
+                    </article>
+                </div>
+                <button class="carrusel-btn right">&#10095;</button>
+            </div>
+        </section>
+        <div class="overlay ocultar" id="productoOverlay">
+            <div class="overlay-cont">
+                <button class="cerrar-btn">&times;</button>
+                <img id="overlayImg" src="" alt="Postre 1">
+                <h3 id="overlayTitle"></h3>
+                <p id="overlayPrice"></p>
+                <p id="overlayDesc"></p>
+            </div>
+        </div>
     </main>
 
-        </div>
     </div>
+    </div>
+    <script src="/frontend/assets/js/components/carrusel.js"></script>
 </body>
 
 </html>
