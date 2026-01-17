@@ -1,41 +1,148 @@
-/* Importar utilidades y estructuras generales */
+/* ================================
+   IMPORTS
+================================ */
 @import url('base.css');
 @import url('utils.css');
-@import url('components/form.css');
 @import url('components/nav.css');
 @import url('layout.css');
 
-/* Importar estilos de páginas */
 @import url('pages/index.css');
 @import url('pages/postres.css');
 @import url('pages/detalles.css');
 @import url('pages/flores.css');
 @import url('pages/contactanos.css');
 
-/* Estilos generales */
+@import url('forms_register_login.css');
+
+
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #fff6fb;
+    font-family: var(--font-text);
+    background-color: white;
+    color: var(--dark);
 }
 
+/* Textos */
 h1,
 h2,
 h3 {
-    font-weight: bold;
-    color: #333;
+    font-family: var(--font-title);
+    font-weight: normal;
+    color: var(--dark);
 }
 
 p {
-    color: #444;
+    font-family: var(--font-text);
+    color: var(--gray);
 }
 
+/* Enlaces */
 a {
+    font-family: var(--font-text);
     text-decoration: none;
-    color: #b30059;
+    color: var(--primary);
+    transition: 0.3s;
 }
 
 a:hover {
-    color: #ff4da6;
+    color: var(--light);
+}
+
+/* Botones base */
+button {
+    background: var(--primary);
+    color: var(--light);
+}
+
+h1 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+p {
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Botones base */
+button {
+    background: var(--primary);
+    color: var(--light);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* ================================
+   MEDIA QUERIES (RESPONSIVE)
+================================ */
+@media (max-width: 768px) {
+
+    .container {
+        padding: 0 16px;
+    }
+
+    button {
+        padding: 10px 16px;
+        font-size: 16px;
+    }
+
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(2px);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    z-index: 3000;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 320px;
+    height: 100vh;
+
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(18px);
+
+    box-shadow: -15px 0 40px rgba(0, 0, 0, 0.25);
+
+    transition: right 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 4000;
+}
+
+.side-panel.active {
+    right: 0;
 }

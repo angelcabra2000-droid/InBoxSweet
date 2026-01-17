@@ -5,7 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Detalles - Inbox Sweet</title>
+    <link rel="icon" type="image/png" href="../assets/img/Logo/MiniLogo_1_32px.png">
     <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Dunkin (similar) -->
+    <link href="https://fonts.cdnfonts.com/css/dunkin" rel="stylesheet">
 </head>
 
 <body>
@@ -15,13 +24,20 @@
 
             <nav class="navbar">
                 <!-- Fila del título -->
+
+                <!-- Fila del título -->
                 <div class="navbar-title">
-                    <h1>Inbox Sweet</h1>
+                    <img src="../assets/img/Logo/Logo_1_120px.png" alt="Inbox Sweet" class="logo">
                 </div>
 
-                <!-- Fila del menú -->
+
                 <div class="navbar-menu">
-                    <ul>
+
+                    <!-- BOTÓN HAMBURGUESA -->
+                    <button class="hamburger" id="hamburger">☰</button>
+
+                    <!-- MENÚ DESKTOP -->
+                    <ul class="menu desktop-menu">
                         <li><a href="../index.html">Inicio</a></li>
                         <li><a href="postres.html">Postres</a></li>
                         <li><a href="detalles.html">Detalles</a></li>
@@ -29,17 +45,99 @@
                         <li><a href="contactanos.html">Contáctanos</a></li>
                     </ul>
 
-                    <a href="login.html" class="btn-login">Iniciar sesión</a>
+
                 </div>
+
+
             </nav>
+
+            <div id="menuPanel" class="side-panel menu-panel">
+                <ul class="menu desktop-menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="postres.html">Postres</a></li>
+                    <li><a href="detalles.html">Detalles</a></li>
+                    <li><a href="flores.html">Flores</a></li>
+                    <li><a href="contactanos.html">Contáctanos</a></li>
+                </ul>
+            </div>
+
             <!-- Contenido inicial -->
-            <main>
+            <main class="container">
                 <h1>Detalles</h1>
                 <p>Aquí irán los Detalles.</p>
             </main>
 
         </div>
     </div>
+    <div class="btn">
+        <button class="btn-register" onclick="abrirRegister()">Registrarse</button>
+        <button class="btn-login" onclick="abrirLogin()">Iniciar sesión</button>
+    </div>
+
+    <!-- Contenido inicial -->
+    <main class="container">
+        <p>Bienvenido a Inbox Sweet. Aquí inicia tu sitio web de postres.</p>
+    </main>
+
+    </div>
+    </div>
+
+
+
+    <!-- Panel de login -->
+    <div id="loginPanel" class="side-panel login-panel">
+        <h2>Iniciar sesión</h2>
+
+        <label>Correo electrónico</label>
+        <input type="email" placeholder="correo@ejemplo.com">
+
+        <label>Contraseña</label>
+        <input type="password" placeholder="••••••">
+
+        <button>Ingresar</button>
+
+        <p class="switch-text">
+            ¿No tienes cuenta? <a href="#" onclick="abrirRegisterDesdeLogin()">Regístrate aquí</a>
+
+        </p>
+
+
+    </div>
+
+
+    <!-- Panel de registro -->
+    <div id="registerPanel" class="side-panel register-panel">
+
+        <h2>Crear cuenta</h2>
+
+        <label>Nombre</label>
+        <input type="text" placeholder="Tu nombre">
+
+        <label>Correo electrónico</label>
+        <input type="email" placeholder="correo@ejemplo.com">
+
+        <label>Contraseña</label>
+        <input type="password" placeholder="••••••">
+
+        <label>Confirmar contraseña</label>
+        <input type="password" placeholder="••••••">
+
+        <button>Registrarme</button>
+
+        <p class="switch-text">
+            ¿Ya tienes cuenta? <a href="#" onclick="volverALogin()">Inicia sesión</a>
+
+        </p>
+
+    </div>
+
+    <div id="overlay" class="overlay" "></div>
+
+    <script src=" ../assets/js/components/overlay.js" defer>
+    </script>
+        <script src="../assets/js/components/nav.js" defer></script>
+        <script src="../assets/js/pages/login_register.js"></script>
+
 </body>
 
 </html>

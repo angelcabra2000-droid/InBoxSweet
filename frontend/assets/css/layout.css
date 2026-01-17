@@ -1,24 +1,8 @@
-/* Fondo que centra la hoja */
-.app-bg {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
-    /* espacio con el fondo */
-}
-
-/* Hoja clara */
-.app-container {
-    width: 100%;
-    max-width: 1400px;
-    background-color: #d6d9ff;
-    /* versión más clara de #BFC2FF */
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-    /* limpia bordes */
-}
-
-main {
-    padding: 40px 60px;
+.container {
+    max-width: 1200px;
+    /* ancho máximo del contenido */
+    margin: 0 auto;
+    /* centra el contenido */
+    padding: 0 24px;
+    /* margen invisible lateral */
 }
