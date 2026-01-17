@@ -1,23 +1,4 @@
 /* ===============================
-   OVERLAY
-=============================== */
-.overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(3px);
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.3s ease;
-    z-index: 998;
-}
-
-.overlay.active {
-    opacity: 1;
-    pointer-events: all;
-}
-
-/* ===============================
    PANELES (Login y Register)
 =============================== */
 .login-panel,
@@ -36,23 +17,46 @@
     border-left: 1px solid rgba(255, 255, 255, 0.4);
 
     box-shadow: -15px 0 40px rgba(0, 0, 0, 0.25);
-    transition: right 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 999;
+
+    transition:
+        right 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.45s ease,
+        opacity 0.45s ease;
+
+    z-index: 9999;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    overflow-y: auto;
 }
 
-
-/* Cuando están activos */
 .login-panel.active,
 .register-panel.active {
     right: 0;
+    animation: panelEnter 0.45s ease;
 }
 
+
 /* ===============================
-   BOTONES DE LA PÁGINA
+   ANIMACIÓN DE ENTRADA
+=============================== */
+@keyframes panelEnter {
+    from {
+        transform: translateX(15px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* ===============================
+   BOTONES DE LA PÁGINA (Inicio)
 =============================== */
 .btn {
     position: absolute;
@@ -61,7 +65,6 @@
     display: flex;
     gap: 15px;
     z-index: 10;
-    /* Debajo del overlay */
 }
 
 .btn button {
@@ -73,20 +76,18 @@
         color 0.25s ease;
 }
 
-/* Hover lift */
 .btn button:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
 }
 
-/* Cuando se presiona */
 .btn button:active {
     transform: translateY(-1px) scale(0.97);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 
-/* Botón Iniciar sesión */
+/* Botón Login */
 .btn .btn-login {
     background: var(--light);
     color: var(--primary);
@@ -96,7 +97,6 @@
     font-weight: 600;
     font-size: 15px;
     cursor: pointer;
-    transition: 0.25s ease;
 }
 
 .btn button.btn-login:hover {
@@ -104,7 +104,8 @@
     color: var(--light);
 }
 
-/* Botón Registrarse */
+
+/* Botón Register */
 .btn .btn-register {
     background: var(--primary);
     color: var(--light);
@@ -114,7 +115,6 @@
     font-weight: 600;
     font-size: 15px;
     cursor: pointer;
-    transition: 0.25s ease;
 }
 
 .btn button.btn-register:hover {
@@ -122,44 +122,10 @@
     color: var(--primary);
 }
 
+
 /* ===============================
-   LINKS DENTRO DE LOS PANELES
+   FORMULARIOS (Inputs & Botones)
 =============================== */
-.switch-text {
-    margin-top: 20px;
-    font-size: 14px;
-    color: var(--gray);
-}
-
-.switch-text a {
-    color: var(--primary);
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.switch-text a:hover {
-    text-decoration: underline;
-}
-
-.login-panel.active,
-.register-panel.active {
-    right: 0;
-    animation: panelEnter 0.45s ease;
-}
-
-@keyframes panelEnter {
-    from {
-        transform: translateX(40px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
 .login-panel input,
 .register-panel input {
     width: 100%;
@@ -171,6 +137,11 @@
     outline: none;
     background: rgba(255, 255, 255, 0.9);
     transition: 0.3s;
+}
+
+.login-panel input:hover,
+.register-panel input:hover {
+    border-color: rgba(0, 0, 0, 0.25);
 }
 
 .login-panel input:focus,
@@ -199,9 +170,63 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+.login-panel button:active,
+.register-panel button:active {
+    transform: scale(0.97);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ===============================
+   TEXTOS Y LINKS
+=============================== */
 .login-panel h2,
 .register-panel h2 {
     font-size: 32px;
     margin-bottom: 25px;
     color: var(--gray);
+}
+
+.switch-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.switch-text a {
+    color: var(--primary);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.switch-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 1024px) {
+
+    .login-panel,
+    .register-panel {
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .login-panel,
+    .register-panel {
+        width: 100%;
+        right: -100%;
+        padding: 40px 24px;
+    }
+
+    .btn {
+        right: 24px;
+        top: 180px;
+    }
 }

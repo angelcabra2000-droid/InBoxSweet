@@ -1,65 +1,251 @@
-/* --- Contenedor general del navbar (solo fondo para el título) --- */
+/* ===============================
+   NAVBAR GENERAL
+=============================== */
 .navbar {
     background: var(--light);
-    /* Fondo fuerte */
-    padding: 15px 0 0 0;
-    /* Quitamos padding abajo para que el menú sea independiente */
+    padding-top: 15px;
 }
 
-/* --- Título centrado --- */
+/* ===============================
+   LOGO
+=============================== */
 .navbar-title {
     display: flex;
     justify-content: center;
-    /* centra horizontalmente */
     align-items: center;
-    width: 100%;
-    /* ocupa todo el ancho */
     padding: 20px 0;
 }
-
-
-.navbar-title h1 {
-    margin: 0;
-    font-size: 32px;
-    font-weight: bold;
-    color: #333;
-
-}
-
-/* --- Fila del menú (con su fondo separado) --- */
-.navbar-menu {
-    background: var(--primary);
-    /* Rosado claro */
-    padding: 20px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    position: relative;
-    border-top: 10px solid var(--gray);
-    /* línea sutil entre título y menú */
-}
-
-/* --- Enlaces del menú --- */
-.navbar-menu ul {
-    list-style: none;
-    display: flex;
-    gap: 70px;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar-menu a {
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--light);
-}
-
 
 .logo {
     height: 150px;
     width: auto;
     object-fit: contain;
+}
+
+/* ===============================
+   BARRA DEL MENÚ
+=============================== */
+.navbar-menu {
+    background: var(--primary);
+    height: var(--nav-height);
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-top: 8px solid var(--gray);
+}
+
+/* ===============================
+   MENÚ DESKTOP
+=============================== */
+.desktop-menu {
+    list-style: none;
+    display: flex;
+    gap: 70px;
+    padding: 0;
+    margin: 0;
+}
+
+.desktop-menu li {
+    position: relative;
+}
+
+.desktop-menu li a {
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--light);
+
+    padding: 10px 16px;
+    border-radius: 12px;
+
+    background: transparent;
+    transition: transform .25s ease, color .25s ease;
+}
+
+/* Subrayado animado */
+.desktop-menu li::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--light);
+    border-radius: 10px;
+    transition: width .3s ease, left .3s ease;
+}
+
+.desktop-menu li:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.desktop-menu li a:hover {
+    transform: translateY(-2px);
+}
+
+/* ===============================
+   BOTÓN HAMBURGUESA
+=============================== */
+.hamburger {
+    position: absolute;
+    left: 20px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+
+    font-size: 22px;
+    background: var(--primary);
+    border: none;
+    border-radius: 8px;
+
+    color: var(--light);
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease,
+        color .25s ease;
+
+    z-index: 2100;
+}
+
+.hamburger:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .25);
+    background: var(--light);
+    color: var(--primary);
+}
+
+.hamburger:active {
+    transform: translateY(-1px) scale(.96);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, .18);
+}
+
+/* ===============================
+   PANEL LATERAL (MENÚ MÓVIL)
+=============================== */
+.menu-panel {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+
+    width: 280px;
+    height: calc(100vh - var(--nav-height));
+
+    background: #ffffff;
+    color: #1e293b;
+
+    padding: 24px 20px;
+
+    transform: translateX(-100%);
+    transition: transform .45s cubic-bezier(.4, 0, .2, 1);
+
+    box-shadow: 8px 0 30px rgba(0, 0, 0, .18);
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+
+    z-index: 1200;
+}
+
+.menu-panel.active {
+    transform: translateX(0);
+}
+
+/* ===============================
+   MENÚ DEL PANEL
+=============================== */
+.menu-panel .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu-panel .menu li a {
     display: block;
+    padding: 14px 16px;
+
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--primary);
+
+    border-radius: 10px;
+    background: transparent;
+
+    transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+}
+
+.menu-panel .menu li a:hover {
+    background: var(--primary);
+    color: var(--light);
+    transform: translateX(6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+}
+
+/* Animación escalonada */
+.menu-panel.active .menu li {
+    animation: fadeSlide .4s ease forwards;
+}
+
+.menu-panel .menu li:nth-child(1) {
+    animation-delay: .05s;
+}
+
+.menu-panel .menu li:nth-child(2) {
+    animation-delay: .1s;
+}
+
+.menu-panel .menu li:nth-child(3) {
+    animation-delay: .15s;
+}
+
+.menu-panel .menu li:nth-child(4) {
+    animation-delay: .2s;
+}
+
+.menu-panel .menu li:nth-child(5) {
+    animation-delay: .25s;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-panel {
+        display: none;
+    }
 }

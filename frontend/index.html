@@ -21,15 +21,20 @@
 
     <nav class="navbar">
         <!-- Fila del título -->
+
+        <!-- Fila del título -->
         <div class="navbar-title">
             <img src="assets/img/Logo/Logo_1_120px.png" alt="Inbox Sweet" class="logo">
-
-
         </div>
 
-        <!-- Fila del menú -->
+
         <div class="navbar-menu">
-            <ul>
+
+            <!-- BOTÓN HAMBURGUESA -->
+            <button class="hamburger" id="hamburger">☰</button>
+
+            <!-- MENÚ DESKTOP -->
+            <ul class="menu desktop-menu">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="pages/postres.html">Postres</a></li>
                 <li><a href="pages/detalles.html">Detalles</a></li>
@@ -39,7 +44,21 @@
 
 
         </div>
+
+
     </nav>
+
+    <div id="menuPanel" class="side-panel menu-panel">
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="pages/postres.html">Postres</a></li>
+            <li><a href="pages/detalles.html">Detalles</a></li>
+            <li><a href="pages/flores.html">Flores</a></li>
+            <li><a href="pages/contactanos.html">Contáctanos</a></li>
+        </ul>
+    </div>
+
+
 
     <div class="btn">
         <button class="btn-register" onclick="abrirRegister()">Registrarse</button>
@@ -56,12 +75,10 @@
     </div>
 
     <!-- Fondo oscuro -->
-    <!-- Overlay oscuro -->
-    <div id="overlay" class="overlay" onclick="cerrarPaneles()"></div>
 
 
     <!-- Panel de login -->
-    <div id="loginPanel" class="login-panel">
+    <div id="loginPanel" class="side-panel login-panel">
         <h2>Iniciar sesión</h2>
 
         <label>Correo electrónico</label>
@@ -82,7 +99,7 @@
 
 
     <!-- Panel de registro -->
-    <div id="registerPanel" class="login-panel register-panel">
+    <div id="registerPanel" class="side-panel register-panel">
 
         <h2>Crear cuenta</h2>
 
@@ -107,7 +124,15 @@
 
     </div>
 
-    <script src="assets/js/pages/login_register.js"></script>
+
+
+    <div id="overlay" class="overlay" "></div>
+
+    <script src=" assets/js/components/overlay.js" defer>
+    </script>
+        <script src="assets/js/components/nav.js" defer></script>
+        <script src="assets/js/pages/login_register.js"></script>
+
 
 
 </body>
