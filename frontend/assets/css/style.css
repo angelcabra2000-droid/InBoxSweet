@@ -4,13 +4,16 @@
 @import url('base.css');
 @import url('utils.css');
 @import url('components/nav.css');
+@import url('components/shopping_cart.css');
 @import url('layout.css');
+
 
 @import url('pages/index.css');
 @import url('pages/postres.css');
 @import url('pages/detalles.css');
 @import url('pages/flores.css');
 @import url('pages/contactanos.css');
+@import url("pages/admin.css");
 
 @import url('forms_register_login.css');
 
@@ -118,7 +121,7 @@ button {
     pointer-events: none;
     transition: opacity 0.3s ease;
 
-    z-index: 3000;
+    z-index: 500;
 }
 
 .overlay.active {
@@ -141,8 +144,4 @@ button {
 
     transition: right 0.45s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 4000;
-}
-
-.side-panel.active {
-    right: 0;
 }

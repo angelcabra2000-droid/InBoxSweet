@@ -1,8 +1,6 @@
 .container {
+    width: 100%;
     max-width: 1200px;
-    /* ancho máximo del contenido */
-    margin: 0 auto;
-    /* centra el contenido */
-    padding: 0 24px;
-    /* margen invisible lateral */
+    margin-inline: auto;
+    padding-inline: clamp(16px, 4vw, 32px);
 }

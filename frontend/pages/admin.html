@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="icon" type="image/png" href="../assets/img/Logo/MiniLogo_1_32px.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Dunkin (similar) -->
+    <link href="https://fonts.cdnfonts.com/css/dunkin" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="app-bg">
+
+        <!-- NAVBAR ADMIN -->
+        <nav class="navbar">
+
+            <!-- LOGO -->
+            <div class="navbar-title">
+                <img src="../assets/img/Logo/Logo_1_120px.png" alt="Inbox Sweet" class="logo">
+            </div>
+
+            <div class="navbar-menu">
+
+                <!-- BOTÓN HAMBURGUESA -->
+                <button class="hamburger" id="hamburger">☰</button>
+
+                <!-- MENÚ DESKTOP -->
+                <ul class="menu desktop-menu">
+                    <li><a href="#" onclick="mostrarPedidos()">Pedidos</a></li>
+                    <li><a href="#" onclick="mostrarProductos()">Productos</a></li>
+                </ul>
+
+                <!-- BOTÓN SALIR (ADMIN) -->
+                <div class="btn">
+                    <button class="btn-login">Salir</button>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- MENÚ MOBILE / SIDE PANEL -->
+        <div id="menuPanel" class="side-panel menu-panel">
+            <ul class="menu">
+                <li><a href="#" onclick="mostrarPedidos()">Pedidos</a></li>
+                <li><a href="#" onclick="mostrarProductos()">Productos</a></li>
+            </ul>
+        </div>
+
+
+        <div class="app-container">
+
+            <!-- CONTENIDO ADMIN -->
+            <div class="admin-container">
+                <main class="admin-content">
+
+                    <!-- PEDIDOS -->
+                    <section id="seccion-pedidos">
+                        <h2>Pedidos</h2>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha</th>
+                                    <th>Total</th>
+                                    <th>Estado</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#001</td>
+                                    <td>Juan Pérez</td>
+                                    <td>15/01/2026</td>
+                                    <td>$50.000</td>
+                                    <td>Pendiente</td>
+                                    <td><button>Ver</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <!-- PRODUCTOS -->
+                    <section id="seccion-productos" style="display: none;">
+                        <h2>Productos</h2>
+
+                        <div class="producto">
+                            <img src="https://via.placeholder.com/200" alt="Producto">
+
+                            <div class="producto-info">
+                                <p>Producto A</p>
+
+                                <label>
+                                    Precio
+                                    <input type="number" value="30000">
+                                </label>
+
+                                <label>
+                                    Imagen
+                                    <input type="file">
+                                </label>
+
+                                <button>Guardar cambios</button>
+                            </div>
+                        </div>
+                    </section>
+
+                </main>
+            </div>
+
+
+            <script src="../assets/js/pages/admin.js"></script>
+
+        </div>
+
+
+
+</body>

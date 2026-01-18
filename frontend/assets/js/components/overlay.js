@@ -10,6 +10,7 @@ function closeAllPanels() {
     loginPanel.classList.remove("active");
     registerPanel.classList.remove("active");
     overlay.classList.remove("active");
+    cartPanel.classList.remove("active");
 }
 
 function openPanel(panel) {

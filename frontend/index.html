@@ -42,8 +42,14 @@
                 <li><a href="pages/contactanos.html">Contáctanos</a></li>
             </ul>
 
+            <div class="btn">
+                <button class="btn-register" onclick="abrirRegister()">Registrarse</button>
+                <button class="btn-login" onclick="abrirLogin()">Iniciar sesión</button>
+            </div>
+
 
         </div>
+
 
 
     </nav>
@@ -59,11 +65,6 @@
     </div>
 
 
-
-    <div class="btn">
-        <button class="btn-register" onclick="abrirRegister()">Registrarse</button>
-        <button class="btn-login" onclick="abrirLogin()">Iniciar sesión</button>
-    </div>
 
 
     <!-- Contenido inicial -->
@@ -125,13 +126,45 @@
     </div>
 
 
+    <aside id="cartPanel" class="side-panel cart-panel">
+        <header class="cart-header">
+            <h2>Tu carrito</h2>
+            <button id="closeCart" class="close-btn">✕</button>
+        </header>
 
-    <div id="overlay" class="overlay" "></div>
+        <div class="cart-items">
+            <div class="cart-item">
+                <img src="https://via.placeholder.com/60" alt="Producto">
+                <div class="item-info">
+                    <p class="item-name">Producto 1</p>
+                    <p class="item-price">$25.000</p>
+                </div>
+                <button class="remove-btn">🗑</button>
+            </div>
+        </div>
+
+        <footer class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <strong>$25.000</strong>
+            </div>
+            <button class="checkout-btn">Finalizar compra</button>
+        </footer>
+    </aside>
+
+    <button id="openCart" class="cart-btn">🛒</button>
+
+
+
+
+
+    <div id="overlay" class="overlay"></div>
 
     <script src=" assets/js/components/overlay.js" defer>
     </script>
-        <script src="assets/js/components/nav.js" defer></script>
-        <script src="assets/js/pages/login_register.js"></script>
+    <script src="assets/js/components/shopping_cart.js" defer></script>
+    <script src="assets/js/components/nav.js" defer></script>
+    <script src="assets/js/pages/login_register.js"></script>
 
 
 

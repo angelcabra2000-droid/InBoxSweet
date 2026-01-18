@@ -1,0 +1,181 @@
+/* =========================
+   BOTÓN CARRITO
+   ========================= */
+.cart-btn {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 5000 !important;
+    /* Debe estar sobre overlay y paneles */
+    background: #f15e5e !important;
+    /* Color más amigable */
+    color: #fff !important;
+    border: none !important;
+    padding: 12px 16px !important;
+    font-size: 22px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.cart-btn:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   PANEL DEL CARRITO
+   ========================= */
+.cart-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    /* Fuera de pantalla inicialmente */
+    width: 380px;
+    max-width: 90%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    display: flex;
+    flex-direction: column;
+    transition: right 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 4500;
+    /* Sobre overlay y otros paneles */
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.25);
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* PANEL ACTIVO */
+.cart-panel.active {
+    right: 0;
+}
+
+/* =========================
+   HEADER DEL CARRITO
+   ========================= */
+.cart-header {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.close-btn {
+    border: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #f15e5e;
+}
+
+/* =========================
+   ITEMS DEL CARRITO
+   ========================= */
+.cart-items {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    align-items: center;
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.item-price {
+    font-size: 14px;
+    color: #666;
+}
+
+.remove-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #888;
+    transition: color 0.2s ease;
+}
+
+.remove-btn:hover {
+    color: #f15e5e;
+}
+
+/* =========================
+   FOOTER DEL CARRITO
+   ========================= */
+.cart-footer {
+    padding: 16px;
+    border-top: 1px solid #eee;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 12px;
+    background: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.checkout-btn:hover {
+    background: #333;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media screen and (max-width: 768px) {
+    .cart-panel {
+        width: 280px;
+    }
+
+    .cart-btn {
+        font-size: 20px;
+        padding: 10px 12px;
+    }
+
+    .cart-item img {
+        width: 50px;
+        height: 50px;
+    }
+}
