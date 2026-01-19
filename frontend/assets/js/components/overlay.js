@@ -11,6 +11,7 @@ function closeAllPanels() {
     registerPanel.classList.remove("active");
     overlay.classList.remove("active");
     cartPanel.classList.remove("active");
+    document.body.classList.remove("cart-open"); // 👈 CLAVE
 }
 
 function openPanel(panel) {
