@@ -130,12 +130,39 @@
 
     </div>
 
-    <div id="overlay" class="overlay" "></div>
+    <aside id="cartPanel" class="side-panel cart-panel">
+        <header class="cart-header">
+            <h2>Tu carrito</h2>
+            <button class="add-more-btn">＋</button>
+        </header>
 
-    <script src=" ../assets/js/components/overlay.js" defer>
-    </script>
-        <script src="../assets/js/components/nav.js" defer></script>
-        <script src="../assets/js/pages/login_register.js"></script>
+        <div class="cart-items">
+            <div class="cart-item" data-id="1">
+                <img src="https://via.placeholder.com/60" alt="Producto">
+                <div class="item-info">
+                    <p class="item-name">Producto 1</p>
+                    <p class="item-price" data-price="25000">$25.000</p>
+                </div>
+                <button class="remove-btn">🗑</button>
+            </div>
+
+        </div>
+
+        <footer class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <strong>$25.000</strong>
+            </div>
+            <button class="checkout-btn">Finalizar compra</button>
+        </footer>
+    </aside>
+
+    <button id="openCart" class="cart-btn">🛒</button>
+
+    <div id="overlay" class="overlay"></div>
+
+    <script src="../assets/js/components/panels.js" defer></script>
+    <script src="../assets/js/components/shopping_cart.js" defer></script>
 
 </body>
 
